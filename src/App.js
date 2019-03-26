@@ -55,6 +55,7 @@ class App extends Component {
   };
 
   calculateFaceLocation = data => {
+    console.log(data);
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById("inputimage");
@@ -90,7 +91,7 @@ class App extends Component {
       .then(response => {
         if (response) {
           ///fetch('http://localhost:3000/image', {
-          fetch("https://nameless-mesa-70898.herokuapp.com:3000/image", {
+          fetch("https://nameless-mesa-70898.herokuapp.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
